@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+//Bootstrap
+@import "~bootstrap/scss/bootstrap.scss";
+
+
+html,body{
+    position: relative;
+    width: 100%;
+    font-family: 'Muli', sans-serif;
+}
+body {
+    background-image: url("./assets/images/background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.fs0-8{
+    font-size: 80%;
+}

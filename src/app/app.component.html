@@ -1,0 +1,81 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="h1 text-center text-white">SpaceX Launches</div>
+    </div>
+
+    <div class="col-sm-12 mt-3">
+      <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+          <div class="s-header">
+            <table class="w-100 h-100 tlf">
+              <tr>
+                <td class="w100">
+                  <div class="refresh _cp" (click)="reloadData()">
+                    <img src="./assets/images/refresh.svg" height="20" alt="Refresh">
+                  </div>
+                </td>
+                <td class="text-right fs0-8 text-white">
+
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="ls" name="filter" class="custom-control-input" (click)="applyFilter('ls',$event)" >
+                    <label class="custom-control-label pdt2" for="ls">LAUNCH SUCCESS</label>
+                  </div>
+
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="reused" name="filter" class="custom-control-input" (click)="applyFilter('reused',$event)">
+                    <label class="custom-control-label pdt2" for="reused">REUSED</label>
+                  </div>
+
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="wr" name="filter"  class="custom-control-input" (click)="applyFilter('wr',$event)">
+                    <label class="custom-control-label pdt2" for="wr">WITH REDDIT</label>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table class="w-100 datatable tlf">
+              <tr>
+                <th class="bdg">Badge</th>
+                <th class="rn">Rocket Name</th>
+                <th class="rt">Rocket Type</th>
+                <th class="ld">Launch Date</th>
+                <th>Detail</th>
+                <th class="id">ID</th>
+                <th class="ar">Article</th>
+              </tr>
+              <tr *ngIf="alldata.length == 0">
+                <td class="" colspan="7">
+                  <div style="margin-top: 50px;margin-bottom: 50;">
+                    <div class="loader"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="data" *ngFor="let data of alldata">
+                <td class="">
+                  <img src="./assets/images/placeholder.png" height="18" alt="Link" *ngIf = "data.links.mission_patch_small == null && data.links.mission_patch_small.length  == 0">
+                  <img src="{{data.links.mission_patch_small}}" height="18" *ngIf = "data.links.mission_patch_small != null && data.links.mission_patch_small.length  > 0" alt="Link">
+                </td>
+                <td class="">{{data.rocket.rocket_name}}</td>
+                <td class="">{{data.rocket.rocket_type}}</td>
+                <td class="">{{data.launch_date_utc | date : 'yyyy-MM-dd'}}</td>
+                <td>
+                  {{data.details}}
+                </td>
+                <td class="">{{data.flight_number}}</td>
+                <td class="">
+                  <a href="{{data.links.article_link}}" target="_blank"
+                    *ngIf="data.links.article_link !=null && data.links.article_link.length >0">
+                    <img src="./assets/images/link.svg" height="14" alt="Link">
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

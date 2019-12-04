@@ -1,0 +1,110 @@
+.s-header{
+    background-color: #ffffff0d;
+    height: 75px;
+    padding: 15px 20px;
+    border-radius: 8px 8px 0px 0px;
+    border: 1px solid #989898;
+    border-bottom:0px;
+}
+.refresh{
+    height: 40px;
+    width: 40px;
+    border: 1px solid #fff;
+    border-radius:50% ;
+    text-align: center;
+    line-height: 35px;
+}
+
+.w100{
+    width: 100px;
+}
+.tlf{
+    table-layout: fixed;
+}
+.pdt2{
+    padding-top: 3px;;
+}
+
+::ng-deep .custom-control-label{
+    box-shadow: none !important;
+}
+
+::ng-deep .custom-control-input:checked ~ .custom-control-label::before {
+    color: #fff;
+    border-color: #60adff;
+    background-color: #86c1ff;
+}
+
+::ng-deep .custom-control-label::before {
+    background-color: transparent !important;
+}
+.datatable tr:nth-child(1){
+   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#cbebff+1,ffffff+62 */
+    background: #cbebff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #cbebff 1%, #ffffff 62%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #cbebff 1%,#ffffff 62%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #cbebff 1%,#ffffff 62%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cbebff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+    font-size: 80%;
+    color: #014a98;
+}
+
+.datatable tr:nth-child(1) th{
+    font-weight: normal;
+    padding: 10px;
+}
+
+.id{
+    width: 50px;;
+}
+
+.bdg{
+    width: 80px;;
+}
+.rn,.rt,.ld{
+    width: 100px;
+}
+
+.ar{
+    width: 60px;;
+}
+.datatable { 
+    border-collapse:separate; 
+    border-spacing:0 15px; 
+    margin-top: -15px;
+} 
+.datatable tr.data >td{
+    padding: 15px 10px;
+    font-size: 80%;
+    background-color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+._cp{
+    cursor: pointer;
+}
+
+.loader {
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    margin: auto;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+.datatable tr td:first-child {
+    border-bottom-left-radius: 10px; 
+    border-top-left-radius: 10px; 
+}
+.datatable tr td:last-child { 
+    border-bottom-right-radius: 10px; 
+    border-top-right-radius: 10px;
+}
